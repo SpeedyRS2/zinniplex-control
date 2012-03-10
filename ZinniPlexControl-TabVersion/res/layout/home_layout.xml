@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_image"
+    android:padding="5dip" >
+
+    <TextView
+        android:id="@+id/statusvolume"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/volume"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/statuslisteningmode"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/statusvolume"
+        android:text="@string/listeningMode"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/statusinput"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/statuslisteningmode"
+        android:text="@string/input"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/switchspots"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_toRightOf="@id/statusvolume"
+        android:background="@drawable/spots_button"
+        android:onClick="switchspots" />
+
+    <Button
+        android:id="@+id/switchsaeulen"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_toRightOf="@id/switchspots"
+        android:background="@drawable/saeulen_button"
+        android:onClick="switchsaeulen" />
+
+    <View
+        android:id="@+id/trenner1"
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/statusinput"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/onkyotextview"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_below="@id/trenner1"
+        android:text="@string/onkyo_tx"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/volmute"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_below="@id/onkyotextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="0dip"
+        android:background="@drawable/volmute_button"
+        android:onClick="volmute" />
+
+    <SeekBar
+        android:id="@+id/volbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/onkyotextview"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="5dip"
+        android:layout_toRightOf="@id/volmute"
+        android:max="20" />
+
+    <Button
+        android:id="@+id/pl2xmovie"
+        android:layout_width="106dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/volmute"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="0dip"
+        android:background="@drawable/pl2xmovie_button"
+        android:onClick="pl2xmovie" />
+
+    <Button
+        android:id="@+id/pl2xmusix"
+        android:layout_width="106dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/volmute"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="0dip"
+        android:layout_toRightOf="@id/pl2xmovie"
+        android:background="@drawable/pl2xmusic_button"
+        android:onClick="pl2xmusic" />
+
+    <View
+        android:id="@+id/trenner2"
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/pl2xmovie"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/fantextview"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_below="@id/trenner2"
+        android:text="@string/fan"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/fanon"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/fantextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="2dip"
+        android:background="@drawable/fan_on_button"
+        android:onClick="fanon" />
+
+    <Button
+        android:id="@+id/fanoff"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/fantextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="2dip"
+        android:layout_toRightOf="@id/fanon"
+        android:background="@drawable/fan_off_button"
+        android:onClick="fanoff" />
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/fantextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="2dip"
+        android:layout_toRightOf="@id/fanoff"
+        android:background="@drawable/refresh"
+        android:onClick="refresh" />
+
+    <View
+        android:id="@+id/trenner3"
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/fanon"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/masktextview"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_below="@id/trenner3"
+        android:text="@string/mask"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/mask169"
+        android:layout_width="100dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/masktextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="25dip"
+        android:layout_marginTop="2dip"
+        android:background="@drawable/mask_169_button"
+        android:onClick="mask169" />
+
+    <Button
+        android:id="@+id/mask219"
+        android:layout_width="100dip"
+        android:layout_height="60dip"
+        android:layout_below="@id/masktextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="25dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="2dip"
+        android:layout_toRightOf="@id/mask169"
+        android:background="@drawable/mask_219_button"
+        android:onClick="mask219" />
+
+</RelativeLayout>

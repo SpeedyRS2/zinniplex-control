@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.zinniplex"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <permission android:name="com.timhoeck.android.eventghost.permission.GENERATE_EVENTS" />
+
+    <uses-permission android:name="com.timhoeck.android.eventghost.permission.GENERATE_EVENTS" />
+
+    <permission android:name="com.timhoeck.android.eventghost.permission.SEND_EVENTS" />
+
+    <uses-permission android:name="com.timhoeck.android.eventghost.permission.SEND_EVENTS" />
+
+    <permission android:name="com.timhoeck.android.eventghost.permission.RECEIVE_EVENTS" />
+
+    <uses-permission android:name="com.timhoeck.android.eventghost.permission.RECEIVE_EVENTS" />
+
+    <permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainTabWidget"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name=".ZINNIPLEX_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".OnkyoActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".BlurayActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".LightActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".MaskActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <receiver
+            android:name=".eventghost.EventGhostReceiver"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.timhoeck.android.eventghost.action.RECEIVED_EVENT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
