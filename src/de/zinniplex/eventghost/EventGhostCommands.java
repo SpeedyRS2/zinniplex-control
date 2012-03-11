@@ -16,6 +16,7 @@ public interface EventGhostCommands {
 
 	public static final String COMMAND_LISTEN_PL_2_MOVIE = "listenPL2Movie";
 	public static final String COMMAND_LISTEN_PL_2_MUSIC = "listenPL2Music";
+	public static final String COMMAND_LISTEN_ALL_CH_STEREO = "listenAllChanelStereo";
 	public static final String COMMAND_PREV_LISTEN = "prevListenMode";
 	public static final String COMMAND_NEXT_LISTEN = "nextListenMode";
 
