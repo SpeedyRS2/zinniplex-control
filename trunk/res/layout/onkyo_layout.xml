@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_image"
+    android:padding="5dip" >
+
+    <TextView
+        android:id="@+id/statusvolume"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/volume"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/statuslisteningmode"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/statusvolume"
+        android:text="@string/listeningMode"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/statusinput"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/statuslisteningmode"
+        android:text="@string/input"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray" />
+
+    <View
+        android:id="@+id/trenner1"
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/statusinput"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/onkyotextview"
+        android:layout_width="160dip"
+        android:layout_height="26dip"
+        android:layout_below="@id/trenner1"
+        android:text="@string/onkyo_tx"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/darker_gray"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/volmute"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_below="@id/onkyotextview"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="0dip"
+        android:background="@drawable/volmute_button"
+        android:onClick="volmute" />
+
+    <SeekBar
+        android:id="@+id/volbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/onkyotextview"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="5dip"
+        android:layout_toRightOf="@id/volmute"
+        android:max="20" />
+
+    <View
+        android:id="@+id/trenner2"
+        android:layout_width="fill_parent"
+        android:layout_height="4dip"
+        android:layout_below="@id/volmute"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/prevlistening"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/trenner2"
+        android:layout_marginTop="5dip"
+        android:onClick="prevlistening"
+        android:text="@string/prevListening" />
+
+    <Button
+        android:id="@+id/nextlistening"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/trenner2"
+        android:layout_marginTop="5dip"
+        android:onClick="nextlistening"
+        android:text="@string/nextListening" />
+
+</RelativeLayout>
