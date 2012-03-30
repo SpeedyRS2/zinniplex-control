@@ -11,5 +11,6 @@
     <string name="mask">Maskierung</string>
     <string name="prevListening">Prev Listening</string>
     <string name="nextListening">Next Listening</string>
+    <string name="dimmspots">dimm Spots</string>
 
 </resources>
