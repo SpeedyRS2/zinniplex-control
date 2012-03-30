@@ -4,5 +4,12 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg_image"
     android:padding="5dip" >
-
+   <Button
+        android:id="@+id/dimmspots"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dip"
+        android:onClick="dimmspots"
+        android:text="@string/dimmspots" />
 </RelativeLayout>
