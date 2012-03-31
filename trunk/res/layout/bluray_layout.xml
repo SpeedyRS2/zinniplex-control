@@ -5,4 +5,70 @@
     android:background="@drawable/bg_image"
     android:padding="5dip" >
 
+    <Button
+        android:id="@+id/view1"
+        android:layout_width="180dip"
+        android:layout_height="180dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="View 1" />
+
+    <Button
+        android:id="@+id/view2"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/view1"
+        android:text="View 2" />
+
+    <Button
+        android:id="@+id/view3"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/view2"
+        android:layout_toLeftOf="@id/view1"
+        android:text="View 3" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_below="@id/view1"
+        android:background="#FF00FF00" />
+
+    <Button
+        android:id="@+id/view4"
+        android:layout_width="fill_parent"
+        android:layout_height="120dip"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="5dip"
+        android:text="View 4" />
+
+    <Button
+        android:id="@+id/view5"
+        android:layout_width="180dip"
+        android:layout_height="180dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/view4"
+        android:text="View 5" />
+
+    <Button
+        android:id="@+id/view6"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/view4"
+        android:layout_toRightOf="@id/view5"
+        android:text="View 6" />
+
+    <Button
+        android:id="@+id/view7"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/view6"
+        android:layout_toRightOf="@id/view5"
+        android:text="View 7" />
+
 </RelativeLayout>
