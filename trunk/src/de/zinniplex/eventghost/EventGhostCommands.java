@@ -24,7 +24,11 @@ public interface EventGhostCommands {
 
 	// Lights
 	public static final String COMMAND_SWITCH_SPOTS = "switch_Spots";
+	public static final String COMMAND_SPOTS_PRESSED = "spots_Pressed";
+	public static final String COMMAND_SPOTS_RELEASED = "spots_Released";
 	public static final String COMMAND_SWITCH_SAUELEN = "switch_Sauelen";
+	public static final String COMMAND_SAEULEN_PRESSED = "saeulen_Pressed";
+	public static final String COMMAND_SAEULEN_RELEASED = "saeulen_Released";
 
 	// Fan
 	public static final String COMMAND_FAN_ON = "fan_On";
@@ -33,6 +37,10 @@ public interface EventGhostCommands {
 	// Mask
 	public static final String COMMAND_MASK_169 = "mask169";
 	public static final String COMMAND_MASK_219 = "mask219";
+	public static final String COMMAND_MASK_OPEN_PRESSED = "mask_Open_Pressed";
+	public static final String COMMAND_MASK_OPEN_RELEASED = "mask_Open_Released";
+	public static final String COMMAND_MASK_CLOSE_PRESSED = "mask_Close_Pressed";
+	public static final String COMMAND_MASK_CLOSE_RELEASED = "mask_Close_Released";
 
 	// Blu-ray
 	public static final String COMMAND_BR_PLAY = "bluray_play";
