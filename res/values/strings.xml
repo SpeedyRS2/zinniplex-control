@@ -14,5 +14,8 @@
     <string name="dimmspots">dimm Spots</string>
     <string name="maskopen">Maskierung auf</string>
     <string name="maskclose">Maskierung zu</string>
+    <string name="dimlevelManuel">Dimmlevel Manuell</string>
+    <string name="dimlevelAuto">Dimmlevel Auto</string>
+    <string name="beenden">Beenden</string>
 
 </resources>
