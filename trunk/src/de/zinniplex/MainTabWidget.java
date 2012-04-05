@@ -1,19 +1,28 @@
 package de.zinniplex;
 
-import de.zinniplex.activities.BlurayActivity;
-import de.zinniplex.activities.HomeActivity;
-import de.zinniplex.activities.LightActivity;
-import de.zinniplex.activities.MaskActivity;
-import de.zinniplex.activities.OnkyoActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TabHost;
+import de.zinniplex.activities.BlurayActivity;
+import de.zinniplex.activities.HomeActivity;
+import de.zinniplex.activities.LightActivity;
+import de.zinniplex.activities.MaskActivity;
+import de.zinniplex.activities.OnkyoActivity;
 
 public class MainTabWidget extends TabActivity {
+
+	private static final String SCREEN_BRIGHTNESS_MODE = "screen_brightness_mode";
+	private static final int SCREEN_BRIGHTNESS_MODE_MANUAL = 0;
+	private static final int SCREEN_BRIGHTNESS_MODE_AUTO = 1;
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
@@ -57,8 +66,43 @@ public class MainTabWidget extends TabActivity {
 	 */
 	private void initializeScreen() {
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+		lp.buttonBrightness = 1f;
 		lp.screenBrightness = 0.1f;
 		getWindow().setAttributes(lp);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.dimlevelman:
+			// Screenbrightness auf Manuell gesetzt
+			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+			return true;
+		case R.id.dimlevelauto:
+			// Screenbrightness auf Auto gesetzt
+			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+			return true;
+
+		case R.id.beenden:
+			// Anwendung wird beendet, Screenbrightness wieder auf Auto gesetzt
+			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+			super.finish();
+
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
 }
