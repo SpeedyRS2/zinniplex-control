@@ -45,6 +45,36 @@ public class HomeActivity extends GlobalActivity {
 				return false;
 			}
 		});
+
+		// Maskierung rauf fahren, solange gedrueckt wird
+		Button maskupButton = (Button) this.findViewById(R.id.mask219);
+		maskupButton.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_PRESSED);
+				} else if (event.getAction() == MotionEvent.ACTION_UP) {
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_RELEASED);
+				}
+				return false;
+			}
+		});
+
+		// Maskierung runter fahren, solange gedrueckt wird
+		Button maskdownButton = (Button) this.findViewById(R.id.mask169);
+		maskdownButton.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_PRESSED);
+				} else if (event.getAction() == MotionEvent.ACTION_UP) {
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_RELEASED);
+				}
+				return false;
+			}
+		});
 	}
 
 	// public void switchspots(View view) {
@@ -75,12 +105,14 @@ public class HomeActivity extends GlobalActivity {
 		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_FAN_OFF);
 	}
 
-	public void mask169(View view) {
-		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_169);
-	}
-
-	public void mask219(View view) {
-		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_219);
-	}
+	// public void mask169(View view) {
+	// new
+	// SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_169);
+	// }
+	//
+	// public void mask219(View view) {
+	// new
+	// SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_219);
+	// }
 
 }
