@@ -22,9 +22,9 @@ public class MaskActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_PRESSED);
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_PRESSED);
 				} else if (event.getAction() == MotionEvent.ACTION_UP) {
-					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_RELEASED);
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_RELEASED);
 				}
 				return false;
 			}
@@ -37,9 +37,9 @@ public class MaskActivity extends Activity {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_PRESSED);
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_PRESSED);
 				} else if (event.getAction() == MotionEvent.ACTION_UP) {
-					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_CLOSE_RELEASED);
+					new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_MASK_OPEN_RELEASED);
 				}
 				return false;
 			}
