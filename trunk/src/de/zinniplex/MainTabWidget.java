@@ -83,14 +83,19 @@ public class MainTabWidget extends TabActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		switch (item.getItemId()) {
-		case R.id.dimlevelman:
-			// Screenbrightness auf Manuell gesetzt
+		case R.id.dimlevelmin:
+			// Screenbrightness auf Max gesetzt
 			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+			lp.screenBrightness = 0.1f;
+			getWindow().setAttributes(lp);
 			return true;
-		case R.id.dimlevelauto:
-			// Screenbrightness auf Auto gesetzt
-			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+		case R.id.dimlevelmax:
+			// Screenbrightness auf Min gesetzt
+			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+			lp.screenBrightness = 1f;
+			getWindow().setAttributes(lp);
 			return true;
 
 		case R.id.beenden:
@@ -104,5 +109,15 @@ public class MainTabWidget extends TabActivity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
+
+	@Override
+	public void finish() {
+		// Anwendung wird beendet, Screenbrightness wieder auf Auto gesetzt
+		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+		// TODO Auto-generated method stub
+		super.finish();
+	}
+	
+	
 
 }
