@@ -29,8 +29,11 @@ public class EventGhostReceiver extends BroadcastReceiver {
 	}
 
 	private void saveReceivedEvent(Context context, String event) {
+		// SharedPreferences prefs =
+		// PreferenceManager.getDefaultSharedPreferences(context);
 		SharedPreferences onkyoData = context.getSharedPreferences(GlobalConstants.PREFS_ONKYO, 0);
 		SharedPreferences.Editor editor = onkyoData.edit();
+		// SharedPreferences.Editor editor = prefs.edit();
 		editor.putString(GlobalConstants.PREFS_LISTENING_MODE, event);
 		editor.commit();
 		// Intent intent = new Intent(context, MainTabWidget.class);
