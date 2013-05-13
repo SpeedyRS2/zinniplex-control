@@ -2,6 +2,7 @@ package de.zinniplex.activities;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,9 +21,23 @@ import de.zinniplex.tools.VolumeConverter;
  * 
  */
 public class GlobalActivity extends Activity {
+	public SharedPreferences onkyoData;
+	public OnSharedPreferenceChangeListener listener;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// Use instance field for listener
+		// It will not be gc'd as long as this instance is kept referenced
+		onkyoData = this.getSharedPreferences(GlobalConstants.PREFS_ONKYO, 0);
+
+		listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+			public void onSharedPreferenceChanged(SharedPreferences onkyoData, String key) {
+				updateTextViews();
+			}
+		};
+
+		onkyoData.registerOnSharedPreferenceChangeListener(listener);
 		// initializeVolControlBar();
 	}
 

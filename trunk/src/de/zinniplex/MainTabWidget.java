@@ -37,8 +37,7 @@ public class MainTabWidget extends TabActivity {
 		// Create an Intent to launch an Activity for the tab (to be reused)
 		intent = new Intent().setClass(this, HomeActivity.class);
 		// Initialize a TabSpec for each tab and add it to the TabHost
-		spec = tabHost.newTabSpec("Home").setIndicator("Home", res.getDrawable(R.drawable.ic_tab_home))
-				.setContent(intent);
+		spec = tabHost.newTabSpec("Home").setIndicator("Home", res.getDrawable(R.drawable.ic_tab_home)).setContent(intent);
 		tabHost.addTab(spec);
 
 		// Do the same for the other tabs
@@ -65,10 +64,11 @@ public class MainTabWidget extends TabActivity {
 	 * Helligkeit der App ganz runter regeln und den Portraitmodus fest vorgeben
 	 */
 	private void initializeScreen() {
+
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
 		lp.buttonBrightness = 1f;
-		lp.screenBrightness = 0.1f;
+		lp.screenBrightness = 0.01f;
 		getWindow().setAttributes(lp);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	}
@@ -88,7 +88,7 @@ public class MainTabWidget extends TabActivity {
 		case R.id.dimlevelmin:
 			// Screenbrightness auf Max gesetzt
 			Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
-			lp.screenBrightness = 0.1f;
+			lp.screenBrightness = 0.01f;
 			getWindow().setAttributes(lp);
 			return true;
 		case R.id.dimlevelmax:
@@ -111,13 +111,29 @@ public class MainTabWidget extends TabActivity {
 	}
 
 	@Override
+	protected void onDestroy() {
+		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+		super.onDestroy();
+	}
+
+	@Override
+	protected void onPause() {
+		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+		super.onPause();
+	}
+
+	@Override
+	protected void onStop() {
+		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
+		super.onStop();
+	}
+
+	@Override
 	public void finish() {
 		// Anwendung wird beendet, Screenbrightness wieder auf Auto gesetzt
 		Settings.System.putInt(getContentResolver(), SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTO);
 		// TODO Auto-generated method stub
 		super.finish();
 	}
-	
-	
 
 }
