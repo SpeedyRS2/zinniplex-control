@@ -80,11 +80,30 @@
         android:background="@android:color/darker_gray" />
 
     <Button
-        android:id="@+id/prevlistening"
+        android:id="@+id/volDown"
         android:layout_width="120dip"
         android:layout_height="90dip"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/trenner2"
+        android:layout_marginTop="5dip"
+        android:onClick="volDown"
+        android:text="@string/volDown" />
+
+    <Button
+        android:id="@+id/volUp"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/trenner2"
+        android:layout_marginTop="5dip"
+        android:onClick="volUp"
+        android:text="@string/volUp" />
+    <Button
+        android:id="@+id/prevlistening"
+        android:layout_width="120dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/volDown"
         android:layout_marginTop="5dip"
         android:onClick="prevlistening"
         android:text="@string/prevListening" />
@@ -94,7 +113,7 @@
         android:layout_width="120dip"
         android:layout_height="90dip"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/trenner2"
+        android:layout_below="@id/volUp"
         android:layout_marginTop="5dip"
         android:onClick="nextlistening"
         android:text="@string/nextListening" />

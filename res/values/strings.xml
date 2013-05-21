@@ -5,6 +5,8 @@
     <string name="app_name">ZinniplexControl</string>
     <string name="fan">Lüftung </string>
     <string name="volume">Volume: </string>
+    <string name="volUp">lauter </string>
+    <string name="volDown">leiser </string>
     <string name="listeningMode">Mode: </string>
     <string name="input">Source: </string>
     <string name="onkyo_tx">Onkyo TX-SR 805 Controls</string>
