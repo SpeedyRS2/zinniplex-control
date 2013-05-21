@@ -22,4 +22,12 @@ public class OnkyoActivity extends GlobalActivity {
 		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_NEXT_LISTEN);
 	}
 
+	public void volUp(View view) {
+		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_VOL_UP);
+	}
+
+	public void volDown(View view) {
+		new SubmitCommandAsyncTask().execute(EventGhostCommands.COMMAND_VOL_DOWN);
+	}
+
 }

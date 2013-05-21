@@ -191,7 +191,7 @@
         android:layout_marginRight="25dip"
         android:layout_marginTop="2dip"
         android:background="@drawable/mask_169_button"
-        android:enabled="false" />
+        android:enabled="true" />
 
     <Button
         android:id="@+id/mask219"
@@ -204,6 +204,6 @@
         android:layout_marginTop="2dip"
         android:layout_toRightOf="@id/mask169"
         android:background="@drawable/mask_219_button"
-        android:enabled="false" />
+        android:enabled="true" />
 
 </RelativeLayout>
