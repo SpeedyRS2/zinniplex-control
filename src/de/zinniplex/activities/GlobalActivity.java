@@ -15,7 +15,7 @@ import de.zinniplex.http.SubmitCommandAsyncTask;
 import de.zinniplex.tools.VolumeConverter;
 
 /**
- * Hier werden die generellen Funktionen, die über mehrer Tabs gehen, geregelt
+ * Hier werden die generellen Funktionen, die ueber mehrer Tabs gehen, geregelt
  * 
  * @author SpeedyRS2
  * 
@@ -206,7 +206,7 @@ public class GlobalActivity extends Activity {
 	}
 
 	/**
-	 * speichert die Lautstärke in den Shared Preferences
+	 * speichert die Lautstaerke in den Shared Preferences
 	 * 
 	 * @param volume
 	 */
@@ -230,7 +230,7 @@ public class GlobalActivity extends Activity {
 	}
 
 	/**
-	 * speichert Lautstärke und Quelle in den Shared Preferences
+	 * speichert Lautstaerke und Quelle in den Shared Preferences
 	 * 
 	 * @param volume
 	 * @param source

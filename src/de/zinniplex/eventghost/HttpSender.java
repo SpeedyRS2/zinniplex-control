@@ -9,7 +9,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class HttpSender {
 	
-	public static final String HTPC_IP = "http://192.168.178.29:80?";
+	public static final String HTPC_IP = "http://192.168.178.39:80?";
 	public static final String CONTENTTYPE = "contentType";
 	public static final String CONTENT_TYPE = "Content-Type";
 	public static final String TEXT_HTML = "text/html";
